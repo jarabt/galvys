@@ -88,8 +88,24 @@
             <li class="list-group-item">Min. průjezdní výška 2,9 m</li>
             <li class="list-group-item">Min. průjezdní šířka 1,97 m</li>
           </ul>
-          <button class="btn btn-light btn-sm border-secondary">Pracovní diagram plošiny</button>
+          <button class="btn btn-light btn-sm border-secondary"                       data-bs-toggle="modal" data-bs-target="#modalDiagram"
+>Pracovní diagram plošiny</button>
+
         </p>
+
+                  <!-- Modal -->
+<div class="modal fade" id="modalDiagram" tabindex="-1" aria-labelledby="modalDiagramLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+              <img src="./diagram.jpg" class="img-fluid rounded-top-2 w-100" alt="fotka vysokozdvižné plošiny">
+      </div>      
+    </div>
+  </div>
+</div>
           
       </div>
     </div>
