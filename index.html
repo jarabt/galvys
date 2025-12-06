@@ -395,7 +395,8 @@
               <use xlink:href="#bootstrap"></use>
             </svg>
           </a>
-          <p class="text-body-secondary">© 2023</p>
+            <p class="text-body-secondary">© <span id="year"></span> Zdeněk Vysloužil</p>
+            
         </div>
 
         <div class="col mb-3"></div>
@@ -470,5 +471,8 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
