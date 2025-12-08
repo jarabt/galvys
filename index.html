@@ -34,32 +34,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="#parameters">Parametry</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link active" aria-current="page" href="#prices">Ceny</a>
             </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#services">Práce</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              <a class="nav-link active" aria-current="page" href="#photo-gallery">Fotogalerie</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#contact">Kontakt</a>
             </li>
           </ul>
         </div>
@@ -78,7 +65,7 @@
           <img src="./feather-icon.png" alt="ikona malá hmotnost" height="30" />&nbsp;&nbsp;Plošina má nízkou hmotnost do 3,5 t, proto nepoškozuje zámkovou dlažbu a ani jiné povrchy.
         </p>
         <img src="./galvys_nissan.jpg" class="img-fluid border rounded-3 shadow-lg" alt="fotka vysokozdvižné plošiny">
-        <p class="col-lg-8 mx-auto lead">
+        <p id="parameters" class="col-lg-8 mx-auto lead">
           ÚDAJE PLOŠINY:
           <ul class="list-group">
             <li class="list-group-item">Hmotnost do 3,5 t</li>
@@ -112,8 +99,8 @@
     </div>
 
     <!-- pricing -->
-    <div class="container text-center">
-      <h2>Ceny</h2>
+    <div class="container text-center" id="prices">
+      <h2 >Ceny</h2>
       <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
@@ -171,6 +158,7 @@
     </div>
 
     <!-- album -->
+     <h2 id="services" class="text-center">Práce</h2>
     <div class="album py-5 bg-body-tertiary">
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -327,11 +315,12 @@
     </div>
 
     <!-- carousel -->
-    <div id="carouselExampleCaptions" class="carousel slide">
+     <h2 id="photo-gallery" class="text-center">Fotogalerie</h2>
+    <div id="carouselCaptions" class="carousel slide">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -356,17 +345,18 @@
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselCaptions" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselCaptions" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
     </div>
 
     <!-- contact -->
+     <h2 id="contact" class="text-center">Kontakt</h2>
     <div class="container">
       <address>
         <strong>Zdeněk Vysloužil</strong><br />
