@@ -1362,14 +1362,48 @@
           data-bs-parent="#accordionExample"
         >
           <div class="accordion-body">
-            <strong>This is the third item’s accordion body.</strong> It is
-            hidden by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It’s also worth noting that just
-            about any HTML can go within the <code>.accordion-body</code>,
-            though the transition does limit overflow.
+            <div class="row g-3">
+              <!-- Image - IMG-3 -->
+              <div class="col">
+                <div style="width: 200px" class="card shadow-sm">
+                  <img
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#IMG-3"
+                    src="./gallery/IMG-3-thumb.webp"
+                    class="card-img"
+                    alt="Ořezy a kácení stromů"
+                  />
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="IMG-3"
+                    tabindex="-1"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+                        <div class="modal-body p-0">
+                          <img
+                            src="./gallery/IMG-3.jpg"
+                            class="img-fluid rounded-top-2 w-100"
+                            alt="Ořezy a kácení stromů"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
