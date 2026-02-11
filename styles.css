@@ -48,14 +48,12 @@ a {
 .diagram-btn {
   margin-top: 1rem;
   background-color: var(--color-teal);
-  color: #fff;
   border-color: var(--color-teal);
 }
 
 .diagram-btn:hover {
   background-color: #009199;
   border-color: #009199;
-  color: #fff;
 }
 
 .pricing-header {
