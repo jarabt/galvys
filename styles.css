@@ -1,3 +1,37 @@
+:root {
+  --color-teal: #00adb5;
+  --color-dark: #393e46;
+}
+
+body {
+  color: var(--color-dark);
+}
+
+a {
+  color: var(--color-teal);
+}
+
+.navbar-custom {
+  background-color: var(--color-teal);
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+  color: #fff;
+}
+
+.navbar-custom .nav-link:hover {
+  opacity: 0.8;
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-custom .navbar-toggler-icon {
+  filter: invert(1);
+}
+
 .hero-title {
   margin-bottom: 4rem;
 }
@@ -13,4 +47,31 @@
 
 .diagram-btn {
   margin-top: 1rem;
+  background-color: var(--color-teal);
+  color: #fff;
+  border-color: var(--color-teal);
+}
+
+.diagram-btn:hover {
+  background-color: #009199;
+  border-color: #009199;
+  color: #fff;
+}
+
+.pricing-header {
+  background-color: var(--color-dark);
+  color: #fff;
+}
+
+.gallery-section {
+  background-color: #eeeeee;
+}
+
+.footer-custom {
+  background-color: var(--color-teal);
+  padding: 1.5rem 0;
+}
+
+.footer-custom p {
+  color: rgba(255, 255, 255, 0.7);
 }
