@@ -1,6 +1,6 @@
 :root {
   --color-teal: #00adb5;
-  --color-dark: #393e46;
+  --color-dark: #222831;
 }
 
 body {
@@ -15,14 +15,14 @@ a {
   background-color: var(--color-teal);
 }
 
-.navbar-custom .navbar-brand,
+/* .navbar-custom .navbar-brand,
 .navbar-custom .nav-link {
   color: #fff;
-}
+} */
 
-.navbar-custom .nav-link:hover {
+/* .navbar-custom .nav-link:hover {
   opacity: 0.8;
-}
+} */
 
 .navbar-custom .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.5);
@@ -73,6 +73,6 @@ a {
 }
 
 .footer-custom p {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-dark);
   margin: 0;
 }
