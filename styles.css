@@ -15,21 +15,8 @@ a {
   background-color: var(--color-teal);
 }
 
-/* .navbar-custom .navbar-brand,
-.navbar-custom .nav-link {
-  color: #fff;
-} */
-
-/* .navbar-custom .nav-link:hover {
-  opacity: 0.8;
-} */
-
 .navbar-custom .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-
-.navbar-custom .navbar-toggler-icon {
-  filter: invert(1);
+  border-color: var(--color-dark);
 }
 
 .hero-title {
