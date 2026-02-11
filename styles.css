@@ -35,17 +35,16 @@ a {
 .diagram-btn {
   margin-top: 1rem;
   background-color: var(--color-teal);
-  border-color: var(--color-teal);
+  border: none;
 }
 
 .diagram-btn:hover {
   background-color: #009199;
-  border-color: #009199;
 }
 
 .pricing-header {
   background-color: var(--color-dark);
-  color: #fff;
+  color: #ffffff;
 }
 
 .gallery-section {
