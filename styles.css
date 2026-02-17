@@ -11,6 +11,11 @@ a {
   color: var(--color-teal);
 }
 
+.accordion-body .col {
+  min-width: 200px !important;
+  max-width: 200px !important;
+}
+
 .navbar-custom {
   background-color: var(--color-teal);
 }
