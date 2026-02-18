@@ -138,7 +138,7 @@ categories.forEach(function (cat, i) {
         '<div class="modal-body p-0">' +
         '<img src="./gallery/' +
         img +
-        '.jpg" class="img-fluid rounded-top-2 w-100"' +
+        '.jpg" class="img-fluid rounded-top-2 w-100" loading="lazy"' +
         ' alt="' +
         cat.title +
         '" />' +
