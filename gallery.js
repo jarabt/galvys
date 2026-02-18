@@ -74,6 +74,7 @@ const categories = [
       "gutters-28",
       "gutters-29",
       "gutters-30",
+      "gutters-31",
     ],
   },
   {
