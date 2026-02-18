@@ -88,6 +88,22 @@ const categories = [
     title: "Oprava komínů",
     images: ["chimneys-01", "chimneys-02"],
   },
+  {
+    title: "Elektro práce",
+    images: [
+      "electro-01",
+      "electro-02",
+      "electro-03",
+      "electro-04",
+      "electro-05",
+      "electro-06",
+      "electro-07",
+      "electro-08",
+      "electro-09",
+      "electro-10",
+      "electro-11",
+    ],
+  },
 ];
 
 const accordion = document.getElementById("galleryAccordion");
