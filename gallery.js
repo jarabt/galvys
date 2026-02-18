@@ -78,7 +78,7 @@ const categories = [
   },
   {
     title: "Montáž vánočních výzdob",
-    images: ["christmas-01", "christmas-02"],
+    images: ["christmas-01", "christmas-02", "christmas-03", "christmas-04", "christmas-05", "christmas-06"],
   },
   {
     title: "Montáž veřejného osvětlení",
