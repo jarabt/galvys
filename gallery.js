@@ -84,6 +84,10 @@ const categories = [
     title: "Montáž veřejného osvětlení",
     images: ["lighting-01", "lighting-02", "lighting-03", "lighting-04"],
   },
+  {
+    title: "Oprava komínů",
+    images: ["chimneys-01", "chimneys-02"],
+  },
 ];
 
 const accordion = document.getElementById("galleryAccordion");
