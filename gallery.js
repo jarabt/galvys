@@ -136,9 +136,9 @@ categories.forEach(function (cat, i) {
         '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
         "</div>" +
         '<div class="modal-body p-0">' +
-        '<img src="./gallery/' +
+        '<img data-src="./gallery/' +
         img +
-        '.jpg" class="img-fluid rounded-top-2 w-100" loading="lazy"' +
+        '.jpg" class="img-fluid rounded-top-2 w-100"' +
         ' alt="' +
         cat.title +
         '" />' +
@@ -176,4 +176,11 @@ categories.forEach(function (cat, i) {
     "</div>" +
     "</div>" +
     "</div>";
+});
+
+accordion.addEventListener("shown.bs.collapse", function (e) {
+  e.target.querySelectorAll("img[data-src]").forEach(function (img) {
+    img.src = img.dataset.src;
+    img.removeAttribute("data-src");
+  });
 });
