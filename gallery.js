@@ -39,7 +39,7 @@ const categories = [
   },
   {
     title: "Ořezy a kácení stromů",
-    images: ["trees-01"],
+    images: ["trees-01", "trees-02"],
   },
   {
     title: "Čištění a montáž rýn a okapů",
