@@ -15,6 +15,7 @@ const categories = [
       "banners-11",
       "banners-12",
       "banners-13",
+      "banners-14",
     ],
   },
   {
