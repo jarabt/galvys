@@ -104,6 +104,10 @@ const categories = [
       "electro-11",
     ],
   },
+  {
+    title: "Nátěry fasád",
+    images: ["facades-01", "facades-02", "facades-03", "facades-04"],
+  },
 ];
 
 const accordion = document.getElementById("galleryAccordion");
