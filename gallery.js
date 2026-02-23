@@ -167,7 +167,7 @@ categories.forEach(function (cat, i) {
     '<div id="collapse' +
     i +
     '" class="accordion-collapse collapse"' +
-    ' data-bs-parent="#galleryAccordion">' +
+    ">" +
     '<div class="accordion-body">' +
     '<div class="row g-3">' +
     cards +
