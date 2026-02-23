@@ -33,7 +33,6 @@ const categories = [
       "structures-10",
       "structures-11",
       "structures-12",
-      "structures-13",
     ],
   },
   {
@@ -102,6 +101,7 @@ const categories = [
       "electro-09",
       "electro-10",
       "electro-11",
+      "electro-12",
     ],
   },
   {
