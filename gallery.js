@@ -34,7 +34,6 @@ const categories = [
       "structures-11",
       "structures-12",
       "structures-13",
-      "structures-14",
     ],
   },
   {
@@ -87,7 +86,7 @@ const categories = [
   },
   {
     title: "Oprava komínů",
-    images: ["chimneys-01", "chimneys-02"],
+    images: ["chimneys-01", "chimneys-02", "chimneys-03"],
   },
   {
     title: "Elektro práce",
