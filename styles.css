@@ -40,6 +40,10 @@ a {
   }
 }
 
+.jumbotron-bg p {
+  background-color: #fff;
+}
+
 .hero-title {
   margin-bottom: 4rem;
   animation: lift-up 1.2s ease-out both;
