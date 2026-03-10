@@ -5,6 +5,8 @@
 
 body {
   color: var(--color-dark);
+  background-image: url('./pattern.svg');
+  background-repeat: repeat;
 }
 
 a {
