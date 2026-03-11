@@ -75,6 +75,18 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script>
+      window.goatcounter = {
+        path: function (p) {
+          return location.host + p;
+        },
+      };
+    </script>
+    <script
+      data-goatcounter="https://jarabt.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
   </head>
   <body>
     <!-- navbar -->
@@ -381,13 +393,16 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      history.scrollRestoration = 'manual';
+      history.scrollRestoration = "manual";
       document.getElementById("year").textContent = new Date().getFullYear();
 
       // Collapse navbar on mobile after clicking a nav link
-      const navbarCollapse = document.getElementById('navbarSupportedContent');
-      navbarCollapse.addEventListener('click', function (e) {
-        if (e.target.classList.contains('nav-link') && navbarCollapse.classList.contains('show')) {
+      const navbarCollapse = document.getElementById("navbarSupportedContent");
+      navbarCollapse.addEventListener("click", function (e) {
+        if (
+          e.target.classList.contains("nav-link") &&
+          navbarCollapse.classList.contains("show")
+        ) {
           new bootstrap.Collapse(navbarCollapse).hide();
         }
       });
