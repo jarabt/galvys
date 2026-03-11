@@ -383,6 +383,14 @@
     <script>
       history.scrollRestoration = 'manual';
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Collapse navbar on mobile after clicking a nav link
+      const navbarCollapse = document.getElementById('navbarSupportedContent');
+      navbarCollapse.addEventListener('click', function (e) {
+        if (e.target.classList.contains('nav-link') && navbarCollapse.classList.contains('show')) {
+          new bootstrap.Collapse(navbarCollapse).hide();
+        }
+      });
     </script>
     <script src="./gallery.js"></script>
   </body>

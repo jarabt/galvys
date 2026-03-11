@@ -51,6 +51,15 @@ a {
   scroll-margin-top: 55px;
 }
 
+@media (max-width: 991.98px) {
+  #parameters,
+  #prices,
+  #gallery,
+  #contact {
+    scroll-margin-top: 220px;
+  }
+}
+
 .hero-title {
   margin-bottom: 4rem;
   animation: lift-up 1.2s ease-out both;
