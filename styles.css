@@ -62,7 +62,7 @@ a {
 
 .hero-title {
   margin-bottom: 4rem;
-  animation: lift-up 1.2s ease-out both;
+  animation: lift-up 3s ease-out both;
 }
 
 @keyframes lift-up {
