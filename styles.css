@@ -24,6 +24,12 @@ a {
   border-color: var(--color-dark);
 }
 
+.navbar-call-icon {
+  width: 1.25em;
+  height: 1.5em;
+  vertical-align: middle;
+}
+
 .jumbotron-bg {
   background-image: url("./pattern.svg");
   background-repeat: repeat;
