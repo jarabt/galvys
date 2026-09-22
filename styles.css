@@ -24,6 +24,11 @@ a {
   border-color: var(--color-dark);
 }
 
+.navbar-call {
+  display: inline-flex;
+  align-items: center;
+}
+
 .navbar-call-icon {
   width: 1.75rem;
   height: 1.875rem;
