@@ -107,6 +107,7 @@ a {
 }
 
 .cta-call-btn {
+  --bs-btn-border-width: 2px;
   --bs-btn-color: #000;
   --bs-btn-bg: #fff;
   --bs-btn-border-color: var(--color-teal);
