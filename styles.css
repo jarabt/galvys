@@ -106,6 +106,18 @@ a {
   background-color: #009199;
 }
 
+.cta-call-btn {
+  --bs-btn-color: var(--color-dark);
+  --bs-btn-bg: var(--color-teal);
+  --bs-btn-border-color: var(--color-teal);
+  --bs-btn-hover-color: var(--color-dark);
+  --bs-btn-hover-bg: #009199;
+  --bs-btn-hover-border-color: #009199;
+  --bs-btn-active-color: var(--color-dark);
+  --bs-btn-active-bg: #009199;
+  --bs-btn-active-border-color: #009199;
+}
+
 .pricing-header {
   background-color: var(--color-dark);
   color: #ffffff;
