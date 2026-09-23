@@ -402,6 +402,9 @@
         <p class="text-body-secondary text-center">
           © <span id="year"></span> Zdeněk Vysloužil
         </p>
+        <p id="visit-counter" class="visit-counter text-center" hidden>
+          Návštěv: <span id="visit-count"></span>
+        </p>
       </div>
     </div>
 
@@ -413,6 +416,22 @@
     <script>
       history.scrollRestoration = "manual";
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Public visit counter from GoatCounter (path matches the host-prefixed tracking path)
+      fetch(
+        "https://plosina-prostejov.goatcounter.com/counter/" +
+          encodeURIComponent("plosina-prostejov.cz/") +
+          ".json",
+      )
+        .then(function (res) {
+          if (!res.ok) throw new Error(res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          document.getElementById("visit-count").textContent = data.count;
+          document.getElementById("visit-counter").hidden = false;
+        })
+        .catch(function () {});
 
       // Collapse navbar on mobile after clicking a nav link
       const navbarCollapse = document.getElementById("navbarSupportedContent");

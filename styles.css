@@ -141,3 +141,9 @@ a {
   color: var(--color-dark);
   margin: 0;
 }
+
+.footer-custom .visit-counter {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
