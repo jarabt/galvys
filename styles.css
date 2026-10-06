@@ -147,3 +147,242 @@ a {
   font-size: 0.875rem;
   opacity: 0.8;
 }
+
+/* warning beacon */
+.beacon {
+  position: fixed;
+  top: 76px;
+  left: 20px;
+  z-index: 1010;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.beacon:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 3px;
+}
+
+.beacon svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.beacon-glow {
+  position: absolute;
+  inset: -60%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 55%,
+    rgba(255, 170, 0, 0.55),
+    rgba(255, 170, 0, 0) 65%
+  );
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.beacon-dome-lit {
+  fill: #ffe082;
+  opacity: 0;
+}
+
+.beacon-reflector {
+  opacity: 0.2;
+  transform: translateX(-9px);
+}
+
+@media (max-width: 575.98px) {
+  .beacon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @media (hover: hover) {
+    .beacon:hover .beacon-reflector {
+      animation: beacon-sweep 1s linear infinite;
+    }
+
+    .beacon:hover .beacon-glow {
+      animation: beacon-glow 1s linear infinite;
+    }
+
+    .beacon:hover .beacon-dome-lit {
+      animation: beacon-dome 1s linear infinite;
+    }
+  }
+
+  .beacon.is-burst .beacon-reflector {
+    animation: beacon-burst-sweep 0.4s linear 4;
+  }
+
+  .beacon.is-burst .beacon-glow {
+    inset: -90%;
+    animation: beacon-burst-glow 0.4s linear 4;
+  }
+
+  .beacon.is-burst .beacon-dome-lit {
+    animation: beacon-burst-dome 0.4s linear 4;
+  }
+}
+
+/* Reduced motion: light up without rotating or flashing */
+@media (prefers-reduced-motion: reduce) {
+  .beacon:hover .beacon-glow,
+  .beacon.is-burst .beacon-glow {
+    opacity: 0.8;
+  }
+
+  .beacon:hover .beacon-dome-lit,
+  .beacon.is-burst .beacon-dome-lit {
+    opacity: 0.5;
+  }
+
+  .beacon:hover .beacon-reflector,
+  .beacon.is-burst .beacon-reflector {
+    opacity: 0.8;
+    transform: none;
+  }
+}
+
+/* The reflector's sideways position follows a rotation seen from the front:
+   fast and bright as it passes the front, faint while it travels behind. */
+@keyframes beacon-sweep {
+  0% {
+    transform: translateX(-14px);
+    opacity: 0.1;
+  }
+  12.5% {
+    transform: translateX(-9.9px);
+    opacity: 0.45;
+  }
+  20% {
+    transform: translateX(-4.3px);
+    opacity: 0.85;
+  }
+  25% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(4.3px);
+    opacity: 0.85;
+  }
+  37.5% {
+    transform: translateX(9.9px);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateX(14px);
+    opacity: 0.1;
+  }
+  62.5% {
+    transform: translateX(9.9px);
+    opacity: 0.04;
+  }
+  75% {
+    transform: translateX(0);
+    opacity: 0.03;
+  }
+  87.5% {
+    transform: translateX(-9.9px);
+    opacity: 0.04;
+  }
+  100% {
+    transform: translateX(-14px);
+    opacity: 0.1;
+  }
+}
+
+@keyframes beacon-glow {
+  0%,
+  50%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.9);
+  }
+  15%,
+  35% {
+    opacity: 0.4;
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes beacon-dome {
+  0%,
+  50%,
+  100% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.55;
+  }
+}
+
+/* Click burst: same sweep, faster and brighter */
+@keyframes beacon-burst-sweep {
+  0% {
+    transform: translateX(-14px);
+    opacity: 0.2;
+  }
+  12.5% {
+    transform: translateX(-9.9px);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  37.5% {
+    transform: translateX(9.9px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateX(14px);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translateX(0);
+    opacity: 0.05;
+  }
+  100% {
+    transform: translateX(-14px);
+    opacity: 0.2;
+  }
+}
+
+@keyframes beacon-burst-glow {
+  0%,
+  50%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.9);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes beacon-burst-dome {
+  0%,
+  50%,
+  100% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+}
