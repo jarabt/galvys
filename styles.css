@@ -222,16 +222,16 @@ a {
   }
 
   .beacon.is-burst .beacon-reflector {
-    animation: beacon-burst-sweep 0.4s linear 4;
+    animation: beacon-burst-sweep 0.4s linear var(--flash-count, 4);
   }
 
   .beacon.is-burst .beacon-glow {
     inset: -90%;
-    animation: beacon-burst-glow 0.4s linear 4;
+    animation: beacon-burst-glow 0.4s linear var(--flash-count, 4);
   }
 
   .beacon.is-burst .beacon-dome-lit {
-    animation: beacon-burst-dome 0.4s linear 4;
+    animation: beacon-burst-dome 0.4s linear var(--flash-count, 4);
   }
 }
 

@@ -551,19 +551,23 @@
           beacon.style.top = navbar.offsetHeight + 20 + "px";
         }
       }
-      function flashBeacon() {
+      function flashBeacon(times) {
         clearTimeout(beaconTimer);
         beacon.classList.remove("is-burst");
+        beacon.style.setProperty("--flash-count", times);
         void beacon.offsetWidth; // restart the burst animation
         beacon.classList.add("is-burst");
         beaconTimer = setTimeout(function () {
           beacon.classList.remove("is-burst");
-        }, 1600);
+        }, times * 400); // each flash takes 0.4s
       }
       placeBeacon();
       window.addEventListener("resize", placeBeacon);
-      beacon.addEventListener("click", flashBeacon);
-      flashBeacon();
+      beacon.addEventListener("click", function () {
+        flashBeacon(4);
+      });
+      // On load, keep flashing a little while after the hero title (3s) lands
+      flashBeacon(9);
     </script>
     <script src="./gallery.js"></script>
   </body>
