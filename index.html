@@ -142,44 +142,90 @@
       <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
         <defs>
           <linearGradient id="beacon-dome-fill" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#ffc233" />
-            <stop offset="1" stop-color="#e07b00" />
+            <stop offset="0" stop-color="#ffc94d" />
+            <stop offset="0.55" stop-color="#f29a12" />
+            <stop offset="1" stop-color="#d06d00" />
+          </linearGradient>
+          <!-- darker edges make the dome read as a rounded cylinder -->
+          <linearGradient id="beacon-dome-shade" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#7a3a00" stop-opacity="0.5" />
+            <stop offset="0.28" stop-color="#7a3a00" stop-opacity="0" />
+            <stop offset="0.7" stop-color="#7a3a00" stop-opacity="0" />
+            <stop offset="1" stop-color="#7a3a00" stop-opacity="0.55" />
           </linearGradient>
           <linearGradient id="beacon-beam-fill" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stop-color="#ffd54f" stop-opacity="0" />
             <stop offset="0.5" stop-color="#fffbe6" />
             <stop offset="1" stop-color="#ffd54f" stop-opacity="0" />
           </linearGradient>
+          <linearGradient id="beacon-collar-fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7a828e" />
+            <stop offset="1" stop-color="#3a414c" />
+          </linearGradient>
+          <linearGradient id="beacon-base-fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#4a525e" />
+            <stop offset="0.4" stop-color="#222831" />
+            <stop offset="1" stop-color="#15191e" />
+          </linearGradient>
           <clipPath id="beacon-dome-clip">
-            <path d="M8 30V17a12 12 0 0 1 24 0v13z" />
+            <path d="M9 29V15.5a11 11 0 0 1 22 0V29z" />
           </clipPath>
         </defs>
+        <ellipse cx="20" cy="37.6" rx="14" ry="1.2" fill="#000" opacity="0.15" />
         <path
-          d="M8 30V17a12 12 0 0 1 24 0v13z"
+          d="M9 29V15.5a11 11 0 0 1 22 0V29z"
           fill="url(#beacon-dome-fill)"
-          fill-opacity="0.9"
+          fill-opacity="0.92"
         />
         <g clip-path="url(#beacon-dome-clip)">
-          <path class="beacon-dome-lit" d="M8 30V17a12 12 0 0 1 24 0v13z" />
-          <circle cx="20" cy="20" r="2.5" fill="#fff3c4" opacity="0.6" />
+          <path class="beacon-dome-lit" d="M9 29V15.5a11 11 0 0 1 22 0V29z" />
+          <!-- lamp holder and bulb -->
+          <rect x="18.6" y="18" width="2.8" height="11" fill="#8a4a00" opacity="0.45" />
+          <ellipse cx="20" cy="16.5" rx="2.2" ry="3" fill="#fff3c4" opacity="0.7" />
           <rect
             class="beacon-reflector"
             x="16"
-            y="4"
+            y="3"
             width="8"
-            height="26"
+            height="27"
             fill="url(#beacon-beam-fill)"
           />
+          <!-- fresnel ribs moulded into the dome -->
+          <g stroke-width="0.45">
+            <path
+              d="M9 9.5h22M9 13h22M9 16.5h22M9 20h22M9 23.5h22M9 27h22"
+              stroke="#fff"
+              stroke-opacity="0.2"
+            />
+            <path
+              d="M9 10h22M9 13.5h22M9 17h22M9 20.5h22M9 24h22M9 27.5h22"
+              stroke="#a85800"
+              stroke-opacity="0.3"
+            />
+          </g>
+          <rect x="9" y="4" width="22" height="25" fill="url(#beacon-dome-shade)" />
         </g>
         <path
-          d="M8 30V17a12 12 0 0 1 24 0v13z"
+          d="M9 29V15.5a11 11 0 0 1 22 0V29z"
           fill="none"
           stroke="#a85800"
-          stroke-width="0.75"
+          stroke-width="0.7"
         />
-        <ellipse cx="14" cy="13" rx="1.6" ry="4" fill="#fff" opacity="0.35" />
-        <rect x="7" y="28.5" width="26" height="2.5" rx="0.8" fill="#3a414c" />
-        <rect x="5" y="30.5" width="30" height="6" rx="1.5" fill="#222831" />
+        <!-- reflections on the plastic -->
+        <path
+          d="M12.3 26V15.5a7.8 8 0 0 1 4-7"
+          fill="none"
+          stroke="#fff"
+          stroke-opacity="0.55"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        />
+        <ellipse cx="25.5" cy="8.6" rx="1.2" ry="0.7" fill="#fff" opacity="0.4" />
+        <rect x="8" y="28.4" width="24" height="2.6" rx="0.6" fill="url(#beacon-collar-fill)" />
+        <path d="M6.5 31h27l1.5 5.5H5z" fill="url(#beacon-base-fill)" />
+        <path d="M7 31.5h26" stroke="#8a929e" stroke-opacity="0.6" stroke-width="0.5" />
+        <circle cx="9.5" cy="34" r="0.75" fill="#8a929e" />
+        <circle cx="30.5" cy="34" r="0.75" fill="#8a929e" />
       </svg>
     </button>
     <!-- jumbotron -->
