@@ -542,7 +542,7 @@
         }
       });
 
-      // Warning beacon: keep it just below the navbar, flash a short burst on click/tap
+      // Warning beacon: keep it just below the navbar, flash a short burst on load and on click/tap
       const beacon = document.querySelector(".beacon");
       const navbar = document.querySelector(".navbar");
       let beaconTimer;
@@ -551,9 +551,7 @@
           beacon.style.top = navbar.offsetHeight + 20 + "px";
         }
       }
-      placeBeacon();
-      window.addEventListener("resize", placeBeacon);
-      beacon.addEventListener("click", function () {
+      function flashBeacon() {
         clearTimeout(beaconTimer);
         beacon.classList.remove("is-burst");
         void beacon.offsetWidth; // restart the burst animation
@@ -561,7 +559,11 @@
         beaconTimer = setTimeout(function () {
           beacon.classList.remove("is-burst");
         }, 1600);
-      });
+      }
+      placeBeacon();
+      window.addEventListener("resize", placeBeacon);
+      beacon.addEventListener("click", flashBeacon);
+      flashBeacon();
     </script>
     <script src="./gallery.js"></script>
   </body>
