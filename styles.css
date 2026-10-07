@@ -92,6 +92,19 @@ a {
   margin-bottom: 2rem;
 }
 
+.vehicle-photo {
+  position: relative;
+}
+
+.vehicle-inset {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  width: 20%;
+  height: auto;
+  background-color: #fff;
+}
+
 .parameters-title {
   margin-top: 1rem;
 }
