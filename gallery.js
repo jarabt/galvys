@@ -110,76 +110,61 @@ const categories = [
   },
 ];
 
-const accordion = document.getElementById("galleryAccordion");
-categories.forEach(function (cat, i) {
-  var cards = cat.images
-    .map(function (img) {
-      return (
-        '<div class="col">' +
-        '<div class="card shadow-sm">' +
-        '<img type="button" data-bs-toggle="modal" data-bs-target="#' +
-        img +
-        '"' +
-        ' src="./gallery/' +
-        img +
-        '-thumb.webp" class="card-img"' +
-        ' alt="' +
-        cat.title +
-        '" />' +
-        '<div class="modal fade" id="' +
-        img +
-        '" tabindex="-1" aria-hidden="true">' +
-        '<div class="modal-dialog modal-dialog-centered modal-lg">' +
-        '<div class="modal-content">' +
-        '<div class="modal-header">' +
-        '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>' +
-        "</div>" +
-        '<div class="modal-body p-0">' +
-        '<img data-src="./gallery/' +
-        img +
-        '.jpg" class="img-fluid rounded-top-2 w-100"' +
-        ' alt="' +
-        cat.title +
-        '" />' +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>" +
-        "</div>"
-      );
-    })
-    .join("");
+const filter = document.querySelector(".gallery-filter");
+const grid = document.querySelector(".gallery-grid");
+const modalTitle = document.getElementById("galleryModalTitle");
+const modalImg = document.getElementById("galleryModalImg");
+const galleryModal = new bootstrap.Modal(document.getElementById("galleryModal"));
 
-  accordion.innerHTML +=
-    '<div class="accordion-item">' +
-    '<h2 class="accordion-header">' +
-    '<button class="accordion-button collapsed" type="button"' +
-    ' data-bs-toggle="collapse" data-bs-target="#collapse' +
-    i +
-    '"' +
-    ' aria-expanded="false" aria-controls="collapse' +
-    i +
-    '">' +
-    cat.title +
-    "</button>" +
-    "</h2>" +
-    '<div id="collapse' +
-    i +
-    '" class="accordion-collapse collapse"' +
-    ">" +
-    '<div class="accordion-body">' +
-    '<div class="row g-3">' +
-    cards +
-    "</div>" +
-    "</div>" +
-    "</div>" +
-    "</div>";
-});
-
-accordion.addEventListener("shown.bs.collapse", function (e) {
-  e.target.querySelectorAll("img[data-src]").forEach(function (img) {
-    img.src = img.dataset.src;
-    img.removeAttribute("data-src");
+// One button per kind of work; only the selected category's thumbnails are loaded
+function showCategory(index) {
+  const cat = categories[index];
+  filter.querySelectorAll("button").forEach(function (btn, i) {
+    btn.setAttribute("aria-pressed", i === index ? "true" : "false");
   });
+  grid.innerHTML = "";
+  cat.images.forEach(function (img, n) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "gallery-thumb";
+    btn.dataset.full = "./gallery/" + img + ".jpg";
+    btn.dataset.title = cat.title;
+    btn.setAttribute(
+      "aria-label",
+      cat.title + ", fotka " + (n + 1) + " z " + cat.images.length,
+    );
+    const thumb = document.createElement("img");
+    thumb.src = "./gallery/" + img + "-thumb.webp";
+    thumb.alt = "";
+    thumb.loading = "lazy";
+    btn.appendChild(thumb);
+    grid.appendChild(btn);
+  });
+}
+
+categories.forEach(function (cat, i) {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "gallery-chip";
+  btn.textContent = cat.title;
+  btn.innerHTML += ' <span class="gallery-count">' + cat.images.length + "</span>";
+  btn.addEventListener("click", function () {
+    showCategory(i);
+  });
+  filter.appendChild(btn);
 });
+
+grid.addEventListener("click", function (e) {
+  const btn = e.target.closest(".gallery-thumb");
+  if (!btn) return;
+  modalTitle.textContent = btn.dataset.title;
+  modalImg.src = btn.dataset.full;
+  modalImg.alt = btn.dataset.title;
+  galleryModal.show();
+});
+
+document.getElementById("galleryModal").addEventListener("hidden.bs.modal", function () {
+  modalImg.removeAttribute("src");
+});
+
+showCategory(0);

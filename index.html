@@ -74,6 +74,12 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..100,400..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <script>
       window.goatcounter = {
@@ -89,53 +95,25 @@
     ></script>
   </head>
   <body>
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <!-- <img src="./logo_galvys.png" alt="ikona plošiny" height="30" /> -->
-          plošina Vysloužil</a
-        >
+    <!-- header -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="brand" href="#">plošina Vysloužil</a>
+        <nav class="site-nav" aria-label="Hlavní navigace">
+          <a href="#parameters">Parametry</a>
+          <a href="#prices">Ceník</a>
+          <a href="#gallery">Fotogalerie</a>
+          <a href="#contact">Kontakt</a>
+        </nav>
         <a
           href="tel:+420602792729"
-          class="link-underline link-underline-opacity-0 text-black me-auto d-none d-lg-inline"
-          ><img src="./tel.svg" /> 602 792 729</a
+          class="header-phone"
+          data-goatcounter-click="cta-call-header"
+          data-goatcounter-title="Zavolat – hlavička"
+          ><img src="./tel.svg" alt="" width="18" height="18" /> 602 792 729</a
         >
-        <a
-          href="tel:+420602792729"
-          class="navbar-toggler navbar-call me-auto"
-          aria-label="Zavolat 602 792 729"
-          ><img src="./tel.svg" alt="" class="navbar-call-icon"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#parameters">Parametry</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#prices">Ceny</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#gallery">Fotogalerie</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Kontakt</a>
-            </li>
-          </ul>
-        </div>
       </div>
-    </nav>
+    </header>
     <!-- warning beacon -->
     <button type="button" class="beacon" aria-label="Výstražný maják">
       <span class="beacon-glow" aria-hidden="true"></span>
@@ -228,293 +206,345 @@
         <circle cx="30.5" cy="34" r="0.75" fill="#8a929e" />
       </svg>
     </button>
-    <!-- jumbotron -->
-    <div class="p-5 text-center jumbotron-bg">
-      <div class="container py-5">
-        <h1 class="text-body-emphasis hero-title">
-          Pronájem pracovní plošiny s obsluhou v Prostějově
-        </h1>
-        <p class="col-lg-8 mx-auto lead mb-4">
-          Provádíme práce <b>vysokozdvižnou</b> plošinou Nissan Cabstar i s
-          obsluhou plošiny.
-        </p>
-        <p class="col-lg-8 mx-auto lead mb-4">
-          <img
-            src="./inside-icon.png"
-            alt="ikona uvnitř v halách"
-            height="30"
-          />&nbsp;&nbsp;Plošina Colombo je poháněna naftovým i elektrickým
-          pohonem (230V). To
-          <b>umožňuje i práci v uzavřených prostorech</b> (halách).
-        </p>
-        <p class="col-lg-8 mx-auto lead mb-4">
-          <img
-            src="./feather-icon.png"
-            alt="ikona malá hmotnost"
-            height="30"
-          />&nbsp;&nbsp;Plošina <b>má nízkou hmotnost</b> do 3,5 t, proto
-          nepoškozuje zámkovou dlažbu a ani jiné povrchy.
-        </p>
-        <a
-          href="tel:+420602792729"
-          class="btn btn-lg cta-call-btn mt-3"
-          data-goatcounter-click="cta-call-hero"
-          data-goatcounter-title="Zavolat – hero tlačítko"
-          >Zavolat 602 792 729</a
-        >
-        <div class="row">
-          <div class="col-md-6 vehicle-col">
+    <main>
+      <!-- hero -->
+      <section class="hero">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            Pronájem pracovní plošiny s obsluhou
+            <span class="hero-place">Prostějov a okolí</span>
+          </h1>
+          <p class="hero-lead">
+            Přijedeme s plošinou i obsluhou a práci ve výšce uděláme za vás.
+            Montáže bannerů a osvětlení, ořezy stromů, okapy, fasády.
+          </p>
+          <a
+            href="tel:+420602792729"
+            class="call-btn"
+            data-goatcounter-click="cta-call-hero"
+            data-goatcounter-title="Zavolat – hero tlačítko"
+            >Zavolat 602 792 729</a
+          >
+          <ul class="hero-facts">
+            <li>
+              <img src="./inside-icon.png" alt="" width="32" height="32" />
+              <span
+                >Plošina 20 m jede i na elektřinu (230 V), takže
+                <b>pracuje i v halách</b>.</span
+              >
+            </li>
+            <li>
+              <img src="./feather-icon.png" alt="" width="32" height="32" />
+              <span
+                >Obě plošiny <b>váží do 3,5 t</b> a nepoškodí zámkovou dlažbu
+                ani jiné povrchy.</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-figure">
+          <div
+            class="height-scale"
+            role="img"
+            aria-label="Pracovní výška: plošina 20 m a plošina 16 m"
+          >
+            <div class="scale-axis">
+              <span class="scale-fill"></span>
+            </div>
+            <span class="scale-num" style="--m: 0">0</span>
+            <span class="scale-num" style="--m: 5">5</span>
+            <span class="scale-num" style="--m: 10">10</span>
+            <span class="scale-num" style="--m: 15">15</span>
+            <span class="scale-mark" style="--m: 16">16 m</span>
+            <span class="scale-mark scale-mark-top" style="--m: 20">20 m</span>
+          </div>
+          <div class="hero-photo">
             <img
               src="./vehicle1.webp"
               width="896"
               height="1190"
-              loading="lazy"
-              class="img-fluid border rounded-3 shadow-lg"
-              alt="fotka vysokozdvižné plošiny"
+              alt="Plošina 20 m s teleskopickým ramenem na podvozku Nissan Cabstar"
             />
-            <h4 id="parameters" class="py-3 parameters-title">
-              ÚDAJE PLOŠINY:
-            </h4>
-            <ul class="list-group mb-3">
-              <li class="list-group-item">Hmotnost do 3,5 t</li>
-              <li class="list-group-item">
-                Možnost naftového nebo elektrického pohonu (230V)
-              </li>
-              <li class="list-group-item">Max. pracovní výška 20 m</li>
-              <li class="list-group-item">Max. boční dosah 7,5 m</li>
-              <li class="list-group-item">Max. nosnost koše 200 kg</li>
-              <li class="list-group-item">Min. průjezdní výška 2,9 m</li>
-              <li class="list-group-item">Min. průjezdní šířka 1,97 m</li>
-            </ul>
-            <button
-              class="btn btn-light btn-sm border-secondary diagram-btn"
-              data-bs-toggle="modal"
-              data-bs-target="#modalDiagram"
-            >
-              Pracovní diagram plošiny
-            </button>
+            <p class="photo-caption">Plošina 20 m</p>
           </div>
-          <div class="col-md-6 vehicle-col">
+          <div class="hero-photo">
             <div class="vehicle-photo">
               <img
                 src="./vehicle2.webp"
                 width="896"
                 height="1190"
-                loading="lazy"
-                class="img-fluid border rounded-3 shadow-lg"
-                alt="fotka vysokozdvižné plošiny"
+                alt="Plošina 16 m s kloubovým ramenem"
               />
               <img
                 src="./vehicle2-boom.webp"
                 width="504"
                 height="670"
                 loading="lazy"
-                class="vehicle-inset border rounded-3 shadow"
-                alt="vysokozdvižná plošina s vysunutým ramenem"
+                class="vehicle-inset"
+                alt="Plošina 16 m s vysunutým ramenem"
               />
             </div>
-            <h4 class="py-3 parameters-title">ÚDAJE PLOŠINY:</h4>
-            <ul class="list-group mb-3">
-              <li class="list-group-item">Hmotnost do 3,5 t</li>
-              <li class="list-group-item">Naftový pohon</li>
-              <li class="list-group-item">Max. pracovní výška 16 m</li>
-              <li class="list-group-item">Max. boční dosah 7 m</li>
-              <li class="list-group-item">
-                Max. nosnost koše 265 kg (2 osoby)
-              </li>
-              <li class="list-group-item">Min. průjezdní výška 2,75 m</li>
-              <li class="list-group-item">Min. průjezdní šířka 2,05 m</li>
-            </ul>
-            <button
-              class="btn btn-light btn-sm border-secondary diagram-btn"
-              data-bs-toggle="modal"
-              data-bs-target="#modalDiagram2"
+            <p class="photo-caption">Plošina 16 m</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- parameters -->
+      <section class="section" id="parameters" aria-labelledby="parameters-title">
+        <h2 id="parameters-title">Parametry</h2>
+        <div class="table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <td></td>
+                <th scope="col">Plošina 20 m</th>
+                <th scope="col">Plošina 16 m</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Pracovní výška</th>
+                <td>20 m</td>
+                <td>16 m</td>
+              </tr>
+              <tr>
+                <th scope="row">Boční dosah</th>
+                <td>7,5 m</td>
+                <td>7 m</td>
+              </tr>
+              <tr>
+                <th scope="row">Nosnost koše</th>
+                <td>200 kg</td>
+                <td>265 kg (2 osoby)</td>
+              </tr>
+              <tr>
+                <th scope="row">Pohon</th>
+                <td>nafta nebo elektřina 230 V</td>
+                <td>nafta</td>
+              </tr>
+              <tr>
+                <th scope="row">Min. průjezdní výška</th>
+                <td>2,9 m</td>
+                <td>2,75 m</td>
+              </tr>
+              <tr>
+                <th scope="row">Min. průjezdní šířka</th>
+                <td>1,97 m</td>
+                <td>2,05 m</td>
+              </tr>
+              <tr>
+                <th scope="row">Hmotnost</th>
+                <td>do 3,5 t</td>
+                <td>do 3,5 t</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td></td>
+                <td>
+                  <button
+                    type="button"
+                    class="link-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalDiagram"
+                  >
+                    Pracovní diagram
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="link-btn"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalDiagram2"
+                  >
+                    Pracovní diagram
+                  </button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <!-- prices -->
+      <section class="section" id="prices" aria-labelledby="prices-title">
+        <h2 id="prices-title">Ceník</h2>
+        <dl class="price-list">
+          <div class="price-row">
+            <dt>Práce plošinou</dt>
+            <dd>750 Kč / hod</dd>
+            <dd class="price-note">
+              První hodina se účtuje celá, potom po čtvrthodinách.
+            </dd>
+          </div>
+          <div class="price-row">
+            <dt>Doprava po Prostějově</dt>
+            <dd>500 Kč</dd>
+          </div>
+          <div class="price-row">
+            <dt>Doprava do 15 km od Prostějova</dt>
+            <dd>500 Kč + 23 Kč / km</dd>
+          </div>
+          <div class="price-row">
+            <dt>Doprava nad 15 km od Prostějova</dt>
+            <dd>23 Kč / km</dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- gallery -->
+      <section class="section" id="gallery" aria-labelledby="gallery-title">
+        <h2 id="gallery-title">Fotogalerie prací</h2>
+        <div class="gallery-filter" role="group" aria-label="Druh práce"></div>
+        <div class="gallery-grid" aria-live="polite"></div>
+      </section>
+
+      <!-- contact -->
+      <section class="section contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Kontakt</h2>
+        <p class="contact-name">Zdeněk Vysloužil</p>
+        <ul class="contact-lines">
+          <li>
+            <a href="tel:+420602792729"
+              ><img src="./tel.svg" alt="" width="22" height="22" /> 602 792 729</a
             >
-              Pracovní diagram plošiny
-            </button>
-          </div>
+          </li>
+          <li>
+            <a href="tel:+420792416213"
+              ><img src="./tel.svg" alt="" width="22" height="22" /> 792 416 213</a
+            >
+          </li>
+          <li>
+            <a href="mailto:info@galvys.cz"
+              ><img src="./email.svg" alt="" width="22" height="22" />
+              info@galvys.cz</a
+            >
+          </li>
+        </ul>
+        <div class="contact-details">
+          <address>
+            <strong>Stanoviště plošiny</strong><br />
+            GALVYS galvanovna<br />
+            Kralická 4679/9<br />
+            796 01 Prostějov
+          </address>
+          <address>
+            <strong>Fakturační adresa</strong><br />
+            Zdeněk Vysloužil<br />
+            Kralická 4679/9<br />
+            796 01 Prostějov
+          </address>
+          <address>
+            <strong>IČO</strong> 49426346<br />
+            <strong>DIČ</strong> CZ6605250949
+          </address>
         </div>
-        <!-- Modal -->
-        <div
-          class="modal fade"
-          id="modalDiagram"
-          tabindex="-1"
-          aria-labelledby="modalDiagramLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body p-0">
-                <img
-                  src="./diagram1.jpg"
-                  class="img-fluid rounded-top-2 w-100"
-                  alt="fotka vysokozdvižné plošiny"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Modal 2 -->
-        <div
-          class="modal fade"
-          id="modalDiagram2"
-          tabindex="-1"
-          aria-labelledby="modalDiagram2Label"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body p-0">
-                <img
-                  src="./diagram2.jpg"
-                  class="img-fluid rounded-top-2 w-100"
-                  alt="fotka vysokozdvižné plošiny"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- pricing -->
-    <div class="container text-center py-5" id="prices">
-      <h2 class="mb-5">Ceny</h2>
-      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 pricing-header">
-              <h4 class="my-0 fw-normal">Práce plošinou</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">
-                750,- Kč<small class="text-body-secondary fw-light">/hod</small>
-              </h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>1. hodina se účtuje celá</li>
-                <li>potom po 1/4 hodinách</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 pricing-header">
-              <h4 class="my-0 fw-normal">Doprava město Prostějov</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">500,- Kč</h1>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 pricing-header">
-              <h4 class="my-0 fw-normal">
-                Doprava v okruhu 15 km od Prostějova
-              </h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">
-                500,- Kč + 23,- Kč<small class="text-body-secondary fw-light"
-                  >/km</small
-                >
-              </h1>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 pricing-header">
-              <h4 class="my-0 fw-normal">Doprava nad 15 km od Prostějova</h4>
-            </div>
-            <div class="card-body">
-              <h1 class="card-title pricing-card-title">
-                23,- Kč<small class="text-body-secondary fw-light">/km</small>
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      </section>
+    </main>
 
-    <!-- album -->
+    <!-- diagram modals -->
     <div
-      class="container text-center py-5 gallery-section rounded-3"
-      id="gallery"
+      class="modal fade"
+      id="modalDiagram"
+      tabindex="-1"
+      aria-label="Pracovní diagram plošiny 20 m"
+      aria-hidden="true"
     >
-      <h2 class="mb-5">Fotogalerie prací</h2>
-      <div class="accordion" id="galleryAccordion"></div>
-    </div>
-
-    <!-- contact -->
-    <div class="container py-5 contact-section">
-      <h2 id="contact" class="text-center mb-5">Kontakt</h2>
-      <address>
-        <strong>Zdeněk Vysloužil</strong><br />
-        <a
-          href="tel:+420602792729"
-          class="link-underline link-underline-opacity-0"
-          ><img src="./tel.svg" /> 602 792 729</a
-        ><br />
-        <a
-          href="tel:+420792416213"
-          class="link-underline link-underline-opacity-0"
-          ><img src="./tel.svg" /> 792 416 213</a
-        ><br />
-        <a
-          href="mailto:info@galvys.cz"
-          class="link-underline link-underline-opacity-0"
-          ><img src="./email.svg" /> info@galvys.cz</a
-        >
-      </address>
-      <address>
-        <strong>Stanoviště plošiny:</strong><br />
-        GALVYS galvanovna<br />
-        Kralická 4679/9<br />
-        796 01 Prostějov<br />
-      </address>
-      <address>
-        <strong>Fakturační adresa:</strong><br />
-        Zdeněk Vysloužil<br />
-        Kralická 4679/9<br />
-        796 01 Prostějov<br />
-      </address>
-      <address>
-        <strong>IČO:</strong><br />
-        49426346
-      </address>
-      <address>
-        <strong>DIČ:</strong><br />
-        CZ6605250949
-      </address>
-    </div>
-    <!-- footer -->
-    <div class="container-fluid footer-custom">
-      <div class="col">
-        <p class="text-body-secondary text-center">
-          © <span id="year"></span> Zdeněk Vysloužil
-        </p>
-        <p id="visit-counter" class="visit-counter text-center" hidden>
-          Návštěv: <span id="visit-count"></span>
-        </p>
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Pracovní diagram, plošina 20 m</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Zavřít"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <img
+              src="./diagram1.jpg"
+              loading="lazy"
+              class="img-fluid w-100"
+              alt="Pracovní diagram plošiny 20 m"
+            />
+          </div>
+        </div>
       </div>
     </div>
+    <div
+      class="modal fade"
+      id="modalDiagram2"
+      tabindex="-1"
+      aria-label="Pracovní diagram plošiny 16 m"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Pracovní diagram, plošina 16 m</h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Zavřít"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <img
+              src="./diagram2.jpg"
+              loading="lazy"
+              class="img-fluid w-100"
+              alt="Pracovní diagram plošiny 16 m"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- gallery photo modal -->
+    <div
+      class="modal fade"
+      id="galleryModal"
+      tabindex="-1"
+      aria-label="Fotografie z galerie"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="galleryModalTitle"></h3>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Zavřít"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <img id="galleryModalImg" class="img-fluid w-100" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Zdeněk Vysloužil</p>
+      <p id="visit-counter" class="visit-counter" hidden>
+        Návštěv: <span id="visit-count"></span>
+      </p>
+    </footer>
+
+    <!-- phone call bar -->
+    <a
+      href="tel:+420602792729"
+      class="call-bar"
+      data-goatcounter-click="cta-call-bar"
+      data-goatcounter-title="Zavolat – spodní lišta"
+      ><img src="./tel.svg" alt="" width="20" height="20" /> Zavolat 602 792 729</a
+    >
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -541,25 +571,12 @@
         })
         .catch(function () {});
 
-      // Collapse navbar on mobile after clicking a nav link
-      const navbarCollapse = document.getElementById("navbarSupportedContent");
-      navbarCollapse.addEventListener("click", function (e) {
-        if (
-          e.target.classList.contains("nav-link") &&
-          navbarCollapse.classList.contains("show")
-        ) {
-          new bootstrap.Collapse(navbarCollapse).hide();
-        }
-      });
-
-      // Warning beacon: keep it just below the navbar, flash a short burst on load and on click/tap
+      // Warning beacon: keep it just below the header, flash a short burst on load and on click/tap
       const beacon = document.querySelector(".beacon");
-      const navbar = document.querySelector(".navbar");
+      const header = document.querySelector(".site-header");
       let beaconTimer;
       function placeBeacon() {
-        if (!navbarCollapse.classList.contains("show")) {
-          beacon.style.top = navbar.offsetHeight + 20 + "px";
-        }
+        beacon.style.top = header.offsetHeight + 20 + "px";
       }
       function flashBeacon(times) {
         clearTimeout(beaconTimer);
@@ -576,8 +593,21 @@
       beacon.addEventListener("click", function () {
         flashBeacon(4);
       });
-      // On load, keep flashing a little while after the hero title (3s) lands
-      flashBeacon(9);
+
+      // On load the height scale fills up to 20 m; the beacon flashes when it gets there
+      const scaleFill = document.querySelector(".scale-fill");
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        scaleFill.classList.add("is-full");
+      } else {
+        scaleFill.addEventListener(
+          "animationend",
+          function () {
+            flashBeacon(3);
+          },
+          { once: true },
+        );
+        scaleFill.classList.add("is-rising");
+      }
     </script>
     <script src="./gallery.js"></script>
   </body>
