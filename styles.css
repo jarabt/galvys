@@ -151,10 +151,17 @@ a {
   opacity: 0.8;
 }
 
-/* warning beacon: video on a white tile at the top of the hero */
+/* warning beacon: video on a white tile in the hero's top-left corner */
+.jumbotron-bg {
+  position: relative;
+}
+
 .beacon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
   display: block;
-  margin: 0 auto 2rem;
   padding: 0;
   border: 0;
   background: none;
@@ -175,8 +182,14 @@ a {
   background-color: #fff;
 }
 
-@media (max-width: 575.98px) {
+/* Narrower screens: the centered title reaches the corner, so the beacon
+   gets smaller and the hero content starts below it */
+@media (max-width: 1199.98px) {
   .beacon-video {
-    height: 120px;
+    height: 80px;
+  }
+
+  .jumbotron-bg > .container {
+    padding-top: 4.5rem !important;
   }
 }
