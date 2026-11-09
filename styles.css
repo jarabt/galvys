@@ -167,8 +167,8 @@ a {
   top: 76px;
   left: 20px;
   z-index: 1010;
-  width: 72px;
-  height: 72px;
+  width: 144px;
+  height: 144px;
   padding: 0;
   border: 0;
   border-radius: 50%;
@@ -202,8 +202,8 @@ a {
 
 @media (max-width: 575.98px) {
   .beacon {
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
   }
 }
 
