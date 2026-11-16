@@ -488,7 +488,9 @@
       function flashBeacon(loops) {
         if (reduceMotion.matches) return;
         beaconLoopsLeft = loops - 1;
-        beaconVideo.currentTime = 0;
+        // skip the seek when already at 0: in Firefox, seeking right after load()
+        // and then playing leaves the poster on screen while the video runs
+        if (beaconVideo.currentTime !== 0) beaconVideo.currentTime = 0;
         playBeacon();
       }
       beaconVideo.addEventListener("ended", function () {
