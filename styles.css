@@ -161,18 +161,6 @@ a {
   top: 20px;
   left: 20px;
   z-index: 1;
-  display: block;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.beacon:focus-visible {
-  outline: 2px solid var(--color-teal);
-  outline-offset: 3px;
-  border-radius: var(--bs-border-radius-lg);
 }
 
 .beacon-video {

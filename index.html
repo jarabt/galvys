@@ -139,7 +139,7 @@
     <!-- jumbotron -->
     <div class="p-5 text-center jumbotron-bg">
       <!-- warning beacon -->
-      <button type="button" class="beacon" aria-label="Výstražný maják">
+      <div class="beacon" role="img" aria-label="Výstražný maják">
         <video
           class="beacon-video rounded-3"
           width="576"
@@ -147,13 +147,14 @@
           poster="./beacon-hero-poster.webp"
           preload="auto"
           muted
+          loop
           playsinline
           aria-hidden="true"
         >
           <source src="./beacon-hero.webm" type="video/webm" />
           <source src="./beacon-hero.mp4" type="video/mp4" />
         </video>
-      </button>
+      </div>
       <div class="container py-5">
         <h1 class="text-body-emphasis hero-title">
           Pronájem pracovní plošiny s obsluhou v Prostějově
@@ -476,36 +477,11 @@
         }
       });
 
-      // Warning beacon: play the 2s video loop twice on load and once per click/tap,
-      // then rest on the unlit poster. Reduced-motion users only see the poster.
-      const beacon = document.querySelector(".beacon");
-      const beaconVideo = beacon.querySelector("video");
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      let beaconLoopsLeft = 0;
-      function playBeacon() {
+      // Warning beacon: loop the video non-stop. Reduced-motion users only see the poster.
+      const beaconVideo = document.querySelector(".beacon-video");
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         beaconVideo.play().catch(function () {}); // autoplay blocked: poster stays
       }
-      function flashBeacon(loops) {
-        if (reduceMotion.matches) return;
-        beaconLoopsLeft = loops - 1;
-        // skip the seek when already at 0: in Firefox, seeking right after load()
-        // and then playing leaves the poster on screen while the video runs
-        if (beaconVideo.currentTime !== 0) beaconVideo.currentTime = 0;
-        playBeacon();
-      }
-      beaconVideo.addEventListener("ended", function () {
-        if (beaconLoopsLeft > 0) {
-          beaconLoopsLeft--;
-          beaconVideo.currentTime = 0;
-          playBeacon();
-        } else {
-          beaconVideo.load(); // back to the unlit poster
-        }
-      });
-      beacon.addEventListener("click", function () {
-        flashBeacon(1);
-      });
-      flashBeacon(2);
     </script>
     <script src="./gallery.js"></script>
   </body>
