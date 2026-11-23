@@ -16,6 +16,7 @@ const categories = [
       "banners-12",
       "banners-13",
       "banners-14",
+      "banners-15",
     ],
   },
   {
@@ -73,6 +74,7 @@ const categories = [
       "gutters-29",
       "gutters-30",
       "gutters-31",
+      "gutters-32",
     ],
   },
   {
@@ -85,7 +87,7 @@ const categories = [
   },
   {
     title: "Oprava komínů",
-    images: ["chimneys-01", "chimneys-02", "chimneys-03"],
+    images: ["chimneys-01", "chimneys-02", "chimneys-03", "chimneys-04"],
   },
   {
     title: "Elektro práce",
@@ -106,7 +108,7 @@ const categories = [
   },
   {
     title: "Nátěry fasád",
-    images: ["facades-01", "facades-02", "facades-03", "facades-04"],
+    images: ["facades-01", "facades-02", "facades-03", "facades-04", "facades-05"],
   },
 ];
 
