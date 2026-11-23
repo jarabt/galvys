@@ -115,6 +115,8 @@ const categories = [
 const accordion = document.getElementById("galleryAccordion");
 categories.forEach(function (cat, i) {
   var cards = cat.images
+    .slice()
+    .reverse()
     .map(function (img) {
       return (
         '<div class="col">' +
